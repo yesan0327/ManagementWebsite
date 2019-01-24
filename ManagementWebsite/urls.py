@@ -19,7 +19,7 @@ from django.urls import include
 from upload import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.home, name='home'),
     path('upload/', include('upload.urls')),
     path('admin/', admin.site.urls),
 
