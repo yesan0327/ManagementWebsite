@@ -1,11 +1,17 @@
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{#<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->#}
+{#<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
+{##}
+{#<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->#}
+{#<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">#}
+{##}
+{#<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->#}
+{#<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>#}
 
-<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Bootstrap core CSS -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Custom styles for this template -->
+<link href="/static/bootstrap/css/dashboard.css" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +21,48 @@
 <body>
 {% include 'nav.html' %}
 {% block content %}
-<div>something there</div>
-{% endblock  %}
+
+    <table class="table table-striped">
+        <thead>　　　　　　　　　　　　　　　　
+        <tr>　　　　
+            <th>论文标题</th>
+            <th>日期</th>
+            <th>作者</th>
+            <th>国别</th>
+            <th>要解决的问题</th>
+            <th>主要内容</th>
+            <th>输入</th>
+            <th>输出</th>
+            <th>技术</th>
+            <th>使用的数据集</th>
+        </tr>
+        </thead>
+        <tbody>　　　　　　　　　　　　　　　　　　　　　　　　　
+        {% for customer in customers_list %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.qq }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.source }}</td>
+                <td>{{ customer.course }}</td>
+                <td>{{ customer.get_class_type_display }}</td>
+                {#get_class_type_display 显示中文#}
+                <td>{{ customer.customer_note|truncatechars:30 }}</td>
+                {#｜truncatechars:30 默认在页面只显示30个字节#}
+                <td class="{{ customer.status }}">{{ customer.get_status_display }}</td>
+                {#根据不同的状态，添加底色样式，css样式在customers.css中定义#}
+                <td>{{ customer.consultant }}</td>
+                <td>{{ customer.date }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
 {% include 'bottom.html' %}
 {% include 'total.html' %}
 </body>
 </html>
+<script src="/static/bootstrap/js/jquery-2.2.3.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="/static/bootstrap/js/holder.min.js"></script>
