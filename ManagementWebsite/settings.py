@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'upload',
+    'papers',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+import mongoengine
+from mongoengine import connect
 
+mongoengine.connect('papers', host='127.0.0.1', port=27017)
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -115,5 +119,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"static")
+    os.path.join(BASE_DIR, "static")
 ]
