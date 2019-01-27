@@ -1,21 +1,52 @@
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/static/bootstrap/css/dashboard.css" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}ManagementWebsite{% endblock title %}</title>
 </head>
 <body>
-<div class="content pure-u-1 pure-u-md-3-4">
-    <div> <h1>...</h1>
-        <!-- A wrapper for all the blog posts -->
-        {% for item in paper %}
-            <!-- A single blog post -->
-            <section>
-                <h3>{{ item.title }}</h3>
-            </section>
-        {% endfor %}
-
+{% load static %}
+{% include 'nav.html' %}
+{% block content %}
+    <div>
     </div>
-</div>
+    <table class="table table-striped">
+        <thead>　　　　　　　　　　　　　　　　
+        <tr>　　　　
+            <th>论文标题</th>
+            <th>主要内容</th>
+            <th>输入</th>
+            <th>输出</th>
+            <th>技术</th>
+            <th>使用的数据集</th>
+        </tr>
+        </thead>
+        <tbody>　　　　　　　　　　　　　　　　　　　　　　　　　
+        {% for i in paper %}
+            <tr>
+                <td>{{ i.title }}</td>
+                <td>{{ i.content }}</td>
+                <td>{{ i.inputform }}</td>
+                <td>{{ i.outputform }}</td>
+                <td>{{ i.notes }}</td>
+                <td>{{ i.database }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+{% include 'bottom.html' %}
+{% include 'total.html' %}
 </body>
 </html>
+<script src="/static/bootstrap/js/jquery-2.2.3.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="/static/bootstrap/js/holder.min.js"></script>
