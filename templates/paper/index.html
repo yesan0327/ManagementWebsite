@@ -8,39 +8,35 @@
     <meta charset="UTF-8">
     <title>{% block title %}ManagementWebsite{% endblock title %}</title>
 </head>
-<body>
+<body >
 {% load static %}
 {% include 'nav.html' %}
 {% block content %}
-    <div>
-    </div>
     <table class="table table-striped">
         <thead>　　　　　　　　　　　　　　　　
         <tr>　　　　
-            <th>论文标题</th>
-            <th>主要内容</th>
-            <th>输入</th>
-            <th>输出</th>
-            <th>技术</th>
-            <th>使用的数据集</th>
+            <th><h5>论文标题</h5></th>
+            <th><h5>主要内容</h5></th>
+            <th><h5>输入</h5></th>
+            <th><h5>输出</h5></th>
+            <th><h5>技术</h5></th>
+            <th><h5>数据集</h5></th>
         </tr>
         </thead>
         <tbody>　　　　　　　　　　　　　　　　　　　　　　　　　
         {% for i in paper %}
             <tr>
-                <td>{{ i.title }}</td>
-                <td>{{ i.content }}</td>
-                <td>{{ i.inputform }}</td>
-                <td>{{ i.outputform }}</td>
-                <td>{{ i.notes }}</td>
-                <td>{{ i.database }}</td>
+                <td><h6>{{ i.title }}</h6></td>
+                <td><h6>{{ i.content }}</h6></td>
+                <td><h6>{{ i.inputform }}</h6></td>
+                <td><h6>{{ i.outputform }}</h6></td>
+                <td><h6>{{ i.notes }}</h6></td>
+                <td><h6>{{ i.database }}</h6></td>
 
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-
 {% endblock %}
 {% include 'bottom.html' %}
 {% include 'total.html' %}
