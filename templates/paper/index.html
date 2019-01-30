@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}ManagementWebsite{% endblock title %}</title>
 </head>
-<body >
+<body>
 {% load static %}
 {% include 'nav.html' %}
 {% block content %}
@@ -40,6 +40,15 @@
 {% endblock %}
 {% include 'bottom.html' %}
 {% include 'total.html' %}
+<div class="main-content-pagitor">
+    {% if paper.has_previous %}
+        <a href="?page={{ paper.previous_page_number }}"> 上一页</a>
+    {% endif %}
+    <span>{{ paper.number }} of {{ paper.paginator.num_pages }}</span>
+    {% if paper.has_next %}
+        <a href="?page={{ paper.next_page_number }}">下一页</a>
+    {% endif %}
+</div>
 </body>
 </html>
 <script src="/static/bootstrap/js/jquery-2.2.3.js"></script>
