@@ -12,36 +12,7 @@
 {% load static %}
 
 {% include 'nav.html' %}
-{% block content %}
-
-    <table class="table table-striped">
-        <thead>　　　　　　　　　　　　　　　　
-        <tr>　　　　
-            <th><h5>论文标题</h5></th>
-            <th><h5>主要内容</h5></th>
-            <th><h5>输入</h5></th>
-            <th><h5>输出</h5></th>
-            <th><h5>技术</h5></th>
-            <th><h5>数据集</h5></th>
-        </tr>
-        </thead>
-        <tbody>　　　　　　　　　　　　　　　　　　　　　　　　　
-        {% for i in paper %}
-            <tr>
-                <td><h6>{{ i.title }}</h6></td>
-                <td><h6>{{ i.content }}</h6></td>
-                <td><h6>{{ i.inputform }}</h6></td>
-                <td><h6>{{ i.outputform }}</h6></td>
-                <td><h6>{{ i.notes }}</h6></td>
-                <td><h6>{{ i.database }}</h6></td>
-
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-
-{% endblock %}
+{% include 'content.html' %}
 {% include 'bottom.html' %}
 {% include 'total.html' %}
 
