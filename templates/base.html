@@ -23,11 +23,21 @@
     <button><a href="/papers/outputcode">代码</a></button>
     <p></p>
     时间：
-    <button><a href="/papers/2013">2013</a></button>
+    <a href="/papers/2013">2013</a>
+    <a href="/papers/2014">2014</a>
+    <a href="/papers/2015">2015</a>
+    <a href="/papers/2016">2016</a>
+    <a href="/papers/2017">2017</a>
+    <a href="/papers/2018">2018</a>
+    <a href="/papers/2019">2019</a>
     <p></p>
     会议：
     <button><a href="/papers/ASE">ASE</a></button>
-
+    <form action="/papers/result/" method="post" name='keywords'>
+        {% csrf_token %}
+        <h5> 输入标题关键词：<input type="text" name="name"/></h5>
+        <input type="submit" value="搜索"/>
+    </form>
     <table class="table table-striped">
         <thead>　　　　　　　　　　　　　　　　
         <tr>　　　　
