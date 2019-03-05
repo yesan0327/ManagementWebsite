@@ -2,6 +2,8 @@
     <thead>　　　　　　　　　　　　　　　　
     <tr>　　　　
         <th><h5>论文标题</h5></th>
+        <th><h5>会议</h5></th>
+        <th><h5>时间</h5></th>
         <th><h5>主要内容</h5></th>
         <th><h5>输入</h5></th>
         <th><h5>输出</h5></th>
@@ -13,12 +15,13 @@
     {% for i in paper %}
         <tr>
             <td><h6>{{ i.title }}</h6></td>
+            <td><h6>{{ i.conference }}</h6></td>
+            <td><h6>{{ i.time }}</h6></td>
             <td><h6>{{ i.content }}</h6></td>
             <td><h6>{{ i.inputform }}</h6></td>
             <td><h6>{{ i.outputform }}</h6></td>
             <td><h6>{{ i.notes }}</h6></td>
             <td><h6>{{ i.database }}</h6></td>
-
         </tr>
     {% endfor %}
     </tbody>
