@@ -15,12 +15,12 @@
 {% block content %}
 
     输入：
-    <button><a href="/papers/API">API</a></button>
-    <button><a href="/papers/inputcode">代码</a></button>
+    <a href="/papers/API">API</a>
+    <a href="/papers/inputcode">代码</a>
     <p></p>
     输出：
-    <button><a href="/papers/function">函数</a></button>
-    <button><a href="/papers/outputcode">代码</a></button>
+    <a href="/papers/function">函数</a>
+    <a href="/papers/outputcode">代码</a>
     <p></p>
     时间：
     <a href="/papers/2013">2013</a>
@@ -32,7 +32,7 @@
     <a href="/papers/2019">2019</a>
     <p></p>
     会议：
-    <button><a href="/papers/ASE">ASE</a></button>
+    <a href="/papers/ASE">ASE</a>
     <form action="/papers/result/" method="post" name='keywords'>
         {% csrf_token %}
         <h5> 输入标题关键词：<input type="text" name="name"/></h5>
@@ -42,6 +42,8 @@
         <thead>　　　　　　　　　　　　　　　　
         <tr>　　　　
             <th><h5>论文标题</h5></th>
+            <th><h5>会议</h5></th>
+            <th><h5>时间</h5></th>
             <th><h5>主要内容</h5></th>
             <th><h5>输入</h5></th>
             <th><h5>输出</h5></th>
@@ -53,6 +55,8 @@
         {% for i in paper %}
             <tr>
                 <td><h6>{{ i.title }}</h6></td>
+                <td><h6>{{ i.conference }}</h6></td>
+                <td><h6>{{ i.time }}</h6></td>
                 <td><h6>{{ i.content }}</h6></td>
                 <td><h6>{{ i.inputform }}</h6></td>
                 <td><h6>{{ i.outputform }}</h6></td>
