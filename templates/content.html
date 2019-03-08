@@ -1,28 +1,30 @@
-<table class="table table-striped">
-    <thead>　　　　　　　　　　　　　　　　
-    <tr>　　　　
-        <th><h5>论文标题</h5></th>
-        <th><h5>会议</h5></th>
-        <th><h5>时间</h5></th>
-        <th><h5>主要内容</h5></th>
-        <th><h5>输入</h5></th>
-        <th><h5>输出</h5></th>
-        <th><h5>技术</h5></th>
-        <th><h5>数据集</h5></th>
-    </tr>
-    </thead>
-    <tbody>　　　　　　　　　　　　　　　　　　　　　　　　　
-    {% for i in paper %}
-        <tr>
-            <td><h6>{{ i.title }}</h6></td>
-            <td><h6>{{ i.conference }}</h6></td>
-            <td><h6>{{ i.time }}</h6></td>
-            <td><h6>{{ i.content }}</h6></td>
-            <td><h6>{{ i.inputform }}</h6></td>
-            <td><h6>{{ i.outputform }}</h6></td>
-            <td><h6>{{ i.notes }}</h6></td>
-            <td><h6>{{ i.database }}</h6></td>
+
+    <table class="table table-hover">
+        <thead>　　　　　　　　　　　　　　　　
+        <tr>　　　　
+            <th><h5><b>论文标题</b></h5></th>
+            <th><h5>会议</h5></th>
+            <th><h5>时间</h5></th>
+            <th><h5>主要内容</h5></th>
+            <th><h5>输入</h5></th>
+            <th><h5>输出</h5></th>
+            <th><h5>技术</h5></th>
+            <th><h5>数据集</h5></th>
         </tr>
-    {% endfor %}
-    </tbody>
-</table>
+        </thead>
+        <tbody>　　　　　　　　　　　　　　　　　　　　　　　　　
+        {% for i in paper %}
+            <tr>
+                <td width="10%"><font size="2">{{ i.title }}</font></td>
+                <td width="1%"><font size="2">{{ i.conference }}</font></td>
+                <td width="1%"><font size="2">{{ i.time }}</font></td>
+                <td width="20%"><font size="2">{{ i.content }}</font></td>
+                <td width="15%"><font size="2">{{ i.inputform }}</font></td>
+                <td width="15%"><font size="2">{{ i.outputform }}</font></td>
+                <td width="15%"><font size="2">{{ i.notes }}</font></td>
+                <td width="8%"><font size="2">{{ i.database }}</font></td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
