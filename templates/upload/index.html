@@ -18,15 +18,24 @@
     <title>Title</title>
 </head>
 <body>
-<div>
-    <h1>upload your file:</h1>
+
+
+
+
+    <img src="/static/images/ins.png" class="img-rounded img-responsive">
+    <div class="container"><h4>第一步</h4>
+    下载文档要求，<a href="/static/download/format.xlsx">点我下载表格</a>
+    <h4>第二步</h4>
+    <img src="/static/images/empty.jpg"><p></p>
+    按照表格填写内容，保存导出为csv格式
+    <h4>第三步</h4>
+    上传您的文件
     <from method="post" enctype="multipart/form-data">
         {{ uf.as_p }}
-        <input type="submit" value="ok"/>
+        <input class="btn btn-primary" type="submit" value="ok"/>
     </from>
 </div>
 {% include 'total.html' %}
-
 
 
 </body>

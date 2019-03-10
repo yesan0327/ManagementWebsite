@@ -7,10 +7,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <style type="text/css">
-.set{
-    -webkit-appearance:button;
-    height: 34px;
-    width: 100px;
+    .set {
+        -webkit-appearance: button;
+        height: 34px;
+        width: 100px;
     }
 </style>
 <head>
@@ -21,49 +21,57 @@
 {% load static %}
 {% include 'nav.html' %}
 {% block content %}
-<div class="container">
+    <div class="container">
 
 
-    输入：
-    <a href="/papers/API">API</a>
-    <a href="/papers/inputcode">代码</a>
-    <p></p>
-    输出：
-    <a href="/papers/function">函数</a>
-    <a href="/papers/outputcode">代码</a>
-    <p></p>
-    时间：
-    <a href="/papers/2013">2013</a>
-    <a href="/papers/2014">2014</a>
-    <a href="/papers/2015">2015</a>
-    <a href="/papers/2016">2016</a>
-    <a href="/papers/2017">2017</a>
-    <a href="/papers/2018">2018</a>
-    <a href="/papers/2019">2019</a>
-    <p></p>
-    会议：
-    <a href="/papers/ASE">ASE</a>
-    <form action="/papers/result/" method="post" name='keywords'>
+        输入：
+        <a href="/papers/API">API</a>
+        <a href="/papers/inputcode">代码</a>
+        <p></p>
+        输出：
+        <a href="/papers/function">函数</a>
+        <a href="/papers/outputcode">代码</a>
+        <p></p>
+
+        会议：
+        <a href="/papers/ASE">ASE</a>
+        <form action="/papers/result/" method="post" name='keywords'/>
+
+<br>
+        <a href="/papers/2005">2005</a>
+        <a href="/papers/2006">2006</a>
+        <a href="/papers/2007">2007</a>
+        <a href="/papers/2008">2008</a>
+        <a href="/papers/2009">2009</a>
+        <a href="/papers/2010">2010</a>
+        <a href="/papers/2011">2011</a>
+        <a href="/papers/2012">2012</a>
+        <a href="/papers/2013">2013</a>
+        <a href="/papers/2014">2014</a>
+        <a href="/papers/2015">2015</a>
+        <a href="/papers/2016">2016</a>
+        <a href="/papers/2017">2017</a>
+        <a href="/papers/2018">2018</a>
+        <a href="/papers/2019">2019</a>
 </div>
-      <hr>
-        {% csrf_token %}
-        <div class="input-group">
-            <input data-drupal-selector="edit-keys" class="form-search form-control" placeholder="Enter paper keywords"
-                   type="search" id="edit-keys" name="name" value="" size="30" maxlength="255" title=""
-                   data-toggle="tooltip" data-original-title="Enter the terms you wish to search for.">
 
-            <span class="input-group-btn">
+    {% csrf_token %}
+    <div class="input-group">
+        <input data-drupal-selector="edit-keys" class="form-search form-control" placeholder="Enter paper keywords"
+               type="search" id="edit-keys" name="name" value="" size="30" maxlength="255" title=""
+               data-toggle="tooltip" data-original-title="Enter the terms you wish to search for.">
+
+        <span class="input-group-btn">
 
         {#        <h5> 输入标题关键词：<input type="text" name="name"/>#}
         {#        <input class="btn btn-primary" type="submit" value="搜索"/></h5>#}
         <button type="submit" name="op" value="Search"
-               class="set button js-form-submit form-submit btn-primary btn icon-only"><span
+                class="set button js-form-submit form-submit btn-primary btn icon-only"><span
                 class="sr-only">Search</span><span class="icon glyphicon glyphicon-search"
                                                    aria-hidden="true"></span></button>
 
 </span>
-        </div>
-
+    </div>
 
     </form>
     <table class="table table-hover">
