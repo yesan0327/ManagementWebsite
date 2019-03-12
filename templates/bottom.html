@@ -6,11 +6,11 @@
     <title>Title</title>
 </head>
 <body>
-<div class="main-content-pagitor">
+<div class="main-content-pagitor" align="center">
     {% if paper.has_previous %}
         <a href="?page={{ paper.previous_page_number }}"> 上一页</a>
     {% endif %}
-    <span>{{ paper.number }} of {{ paper.paginator.num_pages }}</span>
+    <span>{{ paper.number }} / {{ paper.paginator.num_pages }}</span>
     {% if paper.has_next %}
         <a href="?page={{ paper.next_page_number }}">下一页</a>
     {% endif %}
