@@ -22,13 +22,17 @@
 
 
 <img src="/static/images/ins.png" class="img-rounded img-responsive">
-<div class="container"><h4>第一步</h4>
+<div class="container">
+    <h1>Step 1</h1>
+    <hr>
     下载文档要求，<a href="/static/download/format.xlsx">点我下载表格</a>
-    <h4>第二步</h4>
+    <h1>Step 2</h1>
+    <hr>
     <img src="/static/images/empty.jpg">
     <p></p>
     按照表格填写内容，保存导出为csv格式
-    <h4>第三步</h4>
+    <h1>Step 3</h1>
+    <hr>
     上传您的文件
     <from method="post" enctype="multipart/form-data">
         {{ uf.as_p }}

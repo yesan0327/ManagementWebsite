@@ -33,7 +33,7 @@
         <a href="/papers/function">函数</a>
         <a href="/papers/outputcode">代码</a>
         <p></p>
-        
+
         <a href="/papers/APSEC"><img src="/static/images/APSEC.jpeg"></a>&nbsp;
         <a href="/papers/ASE"><img width="61.1*" height="35.1" src="/static/images/ASE.png"></a>&nbsp;
         <a href="/papers/COMPSAC">COMPSAC</a> &nbsp;
@@ -52,7 +52,7 @@
         <a href="/papers/TOSEM">TOSEM</a> &nbsp;
         <a href="/papers/TSE">TSE</a> &nbsp;
         <a href="/papers/WCRE">WCRE</a> &nbsp;
-        <form action="/papers/result/" method="post" name='keywords'/>
+
 
         <br>
         <a href="/papers/2005">2005</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -72,23 +72,37 @@
         <a href="/papers/2019">2019</a>&nbsp;&nbsp;&nbsp;&nbsp;
 
     </div>
-
+    <br>
+    <form action="/papers/result/" method="post" name='keywords'/>
     {% csrf_token %}
-    <div class="input-group">
-        <input data-drupal-selector="edit-keys" class="form-search form-control" placeholder="Enter paper keywords"
-               type="search" id="edit-keys" name="name" value="" size="30" maxlength="255" title=""
-               data-toggle="tooltip" data-original-title="Enter the terms you wish to search for.">
+    <div class="form-inline">
 
-        <span class="input-group-btn">
+        <input data-drupal-selector="edit-keys" class="input-group-lg form-search form-control"
+               placeholder="Enter keywords"
+               type="search" id="edit-keys" name="name" style="width:80%;"
+               data-toggle="tooltip">
+
+        <select data-drupal-selector="edit-sort-order" class="input-group form-select form-control" id="edit-sort-order"
+                name="type" style="width:10%;">
+            <option value="title" selected="selected">标题</option>
+            <option value="conference">会议</option>
+            <option value="content">主要内容</option>
+            <option value="inputform">输入</option>
+            <option value="outputform">输出</option>
+            <option value="notes">技术</option>
+            <option value="database">数据集</option>
+        </select>
+
+        {#        <span class="input-group-btn">#}
 
         {#        <h5> 输入标题关键词：<input type="text" name="name"/>#}
         {#        <input class="btn btn-primary" type="submit" value="搜索"/></h5>#}
-        <button type="submit" name="op" value="Search"
+        <button style="width:9%;" type="submit" name="op" value="Search"
                 class="set button js-form-submit form-submit btn-primary btn icon-only"><span
                 class="sr-only">Search</span><span class="icon glyphicon glyphicon-search"
                                                    aria-hidden="true"></span></button>
 
-</span>
+        {#        </span>#}
     </div>
 
     </form>
