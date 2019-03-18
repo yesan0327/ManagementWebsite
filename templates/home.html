@@ -39,7 +39,48 @@
                 color: '#808080'
             }]
         };
-
+var series = [
+    {
+        name: 'APSEC',
+        data: [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+        name: 'ASE',
+        data: [0, 0, 2, 0, 0, 0, 3, 0, 2, 1, 0, 0, 0, 0, 0]
+    },
+    {
+        name: 'COMPSAC',
+        data: []
+    },
+    {
+        name: 'ECOOP',
+        data: []
+    },
+    {
+        name: 'ESE',
+        data: []
+    },
+    {
+        name: 'FSE',
+        data: []
+    },
+    {
+        name: 'ICPC',
+        data: []
+    },
+    {
+        name: 'ICSE',
+        data: []
+    },
+    {
+        name: 'ICSM',
+        data: []
+    },
+    {
+        name: 'ICWS',
+        data: []
+    }
+]
         var tooltip = {
             valueSuffix: '篇'
         };
@@ -50,49 +91,6 @@
             verticalAlign: 'middle',
             borderWidth: 0
         };
-
-        var series = [
-            {
-                name: 'APSEC',
-                data: [0,0,0,0,0,0,1,1,0,0,0,0,0,0,0]
-            },
-            {
-                name: 'ASE',
-                data: [0,0,2,0,0,0,3,0,2,1,0,0,0,0,0]
-            },
-            {
-                name: 'COMPSAC',
-                data: []
-            },
-            {
-                name: 'ECOOP',
-                data: []
-            },
-             {
-                name: 'ESE',
-                data: []
-            },
-             {
-                name: 'FSE',
-                data: []
-            },
-             {
-                name: 'ICPC',
-                data: []
-            },
-             {
-                name: 'ICSE',
-                data: []
-            },
-             {
-                name: 'ICSM',
-                data: []
-            },
-             {
-                name: 'ICWS',
-                data: []
-            }
-        ];
 
         var json = {};
 
@@ -107,7 +105,63 @@
         $('#pic1').highcharts(json);
     });
 </script>
+    <br>
+    <br>
+    <br>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+   var chart = {
+       plotBackgroundColor: null,
+       plotBorderWidth: null,
+       plotShadow: false
+   };
+   var title = {
+      text: '各会议发布相关论文占有比例'
+   };
+   var tooltip = {
+      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+   };
+   var plotOptions = {
+      pie: {
+         allowPointSelect: true,
+         cursor: 'pointer',
+         dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}%</b>: {point.percentage:.1f} %',
+            style: {
+               color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+            }
+         }
+      }
+   };
+   var series= [{
+      type: 'pie',
+      name: 'occupied total',
+      data: [
+         ['ICSE',   45.0],
+         ['FSE',       26.8],
+         {
+            name: 'ASE',
+            y: 12.8,
+            sliced: true,
+            selected: true
+         },
+         ['RSSE',    8.5],
+         ['WCRE',     6.2],
+         ['Others',   0.7]
+      ]
+   }];
 
+   var json = {};
+   json.chart = chart;
+   json.title = title;
+   json.tooltip = tooltip;
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $('#container').highcharts(json);
+});
+</script>
 </div>
 
 
