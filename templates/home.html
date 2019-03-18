@@ -5,39 +5,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/static/highcharts.js"></script>
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <title>{% block title %}ManagementWebsite{% endblock title %}</title>
 </head>
 <body>
 {% include 'nav.html' %}
+<div>
+<div id="pic1" style="width: 1000px; height: 500px;margin: 0 auto;"></div>
 
-<img src="/static/images/22.png" class="img-rounded img-responsive">
+<script language="JavaScript">
+    var a=[]
+    $(document).ready(function () {
+        var title = {
+            text: '历年来各会议相关论文发表数量'
+        };
+        var subtitle = {
+            text: ''
+        };
+        var xAxis = {
+            categories: ['2005', '2006', '2007', '2008', '2009', '2010'
+                , '2011', '2012', '2013', '2014', '2015', '2016','2017','2018','2019']
+        };
+        var yAxis = {
+            title: {
+                text: '篇数'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        };
 
+        var tooltip = {
+            valueSuffix: '篇'
+        };
 
-<div class="container">
-    <h3>关于智能化软件开发</h3>
-    <hr>
-    <p>
-        提高软件开发的效率和质量是软件工程领域的研究者与实践者始终追求的重要目标。
-        如何在软件开发的过程中，通过改善软件开发方法和运用技术手段提高软件开发的自动化水平，
-        以达到降低软件开发成本、提高软件生产效率、改善软件产品质量的目的，是众多软件研究工作的共同目标。
-    </p>
-    <p>
+        var legend = {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        };
 
-        围绕这一目标，软件工程领域的研究者一方面通过不断探索新的软件形态、探究新的环境下的软件本质来创造新的软件开发范型和软件架构；
-        一方面也通过不断借鉴各个科学领域的研究成果，在本领域现有的开发范型和架构下不断改善技术方法提高生产效率。</p>
-    <p>
-        近年来，人工智能技术取得了长足的发展和进步，这一进步也对软件工程领域的研究形成了重要的促进。
-        软件工程领域的研究者在既有的软件开发范型和体系架构上不断将新的智能技术引入现有的方法和技术中，
-        从而形成了大量有价值的智能化软件开发方法和技术成果，
-        这些新的成果不但促进了软件工程本领域的技术和方法的进步和革新，同时也对人工智能及其他相关领域的发展起到了重要的推动作用。
-    </p>
+        var series = [
+            {
+                name: 'APSEC',
+                data: [0,0,0,0,0,0,1,1,0,0,0,0,0,0,0]
+            },
+            {
+                name: 'ASE',
+                data: [0,0,2,0,0,0,3,0,2,1,0,0,0,0,0]
+            },
+            {
+                name: 'COMPSAC',
+                data: []
+            },
+            {
+                name: 'ECOOP',
+                data: []
+            },
+             {
+                name: 'ESE',
+                data: []
+            },
+             {
+                name: 'FSE',
+                data: []
+            },
+             {
+                name: 'ICPC',
+                data: []
+            },
+             {
+                name: 'ICSE',
+                data: []
+            },
+             {
+                name: 'ICSM',
+                data: []
+            },
+             {
+                name: 'ICWS',
+                data: []
+            }
+        ];
 
-    <p>
-        本网站致力于收集整理相关资料，方便用户查询。
-        您可以上传任何与智能化软件开发相关的论文，<a href="/upload">点击上传</a>。
-    </p>
+        var json = {};
+
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+
+        $('#pic1').highcharts(json);
+    });
+</script>
+
 </div>
 
 
