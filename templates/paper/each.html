@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/static/bootstrap/js/bootstrap.js" rel="stylesheet">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/dashboard.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'nav.html' %}
+<div class="container">
+    <h1>编辑文章信息</h1>
+    <hr>
+    {% for i in paper %}
+        <div>
+        <form action="/papers/editsuccess/" method="post" name='keywords'>
+        {% csrf_token %}
+        <div class="form-inline">
+            <span style="display:inline-block;width:100px;">文章标题： </span><input value='{{ i.title }}' required="required" data-drupal-selector="edit-keys"
+                         class="input-group-lg form-search form-control"
+                         type="search" id="edit-keys" name="title" style="width:50%;"
+                         data-toggle="tooltip">
+        </div>
+        <br>
+        <div class="form-inline">
+            <span style="display:inline-block;width:100px;">会议：</span> <input value='{{ i.conference }}' required="required" data-drupal-selector="edit-keys"
+                       class="input-group-lg form-search form-control"
+                       type="search" id="edit-keys" name="conference" style="width:10%;"
+                       data-toggle="tooltip">
+        </div>
+        <br>
+        <div class="form-inline">
+            <span style="display:inline-block;width:100px;">时间：</span><input value='{{ i.time }}' required="required" data-drupal-selector="edit-keys"
+                      class="input-group-lg form-search form-control"
+                      type="search" id="edit-keys" name="time" style="width:10%;"
+                      data-toggle="tooltip">
+        </div>
+        <br>
+        <div class="form-inline">
+            <span style="display:inline-block;width:100px;">主要内容：</span> <textarea rows="6" required="required" data-drupal-selector="edit-keys"
+                            class="input-group-lg form-search form-control"
+                            type="text" cols="20" id="edit-keys" style="width:50%;overflow: visible"
+                            data-toggle="tooltip" name="content">{{ i.content }}</textarea>
+        </div>
+        <br>
+        <div class="form-inline">
+            <span style="display:inline-block;width:100px;">查询输入格式： </span><input value='{{ i.inputform }}' required="required" data-drupal-selector="edit-keys"
+                           class="input-group-lg form-search form-control"
+                           type="search" id="edit-keys" name="inputform" style="width:50%;"
+                           data-toggle="tooltip">
+        </div>
+        <br>
+        <div class="form-inline">
+            <span style="display:inline-block;width:100px;">结果输出格式：</span> <input value='{{ i.outputform }}' required="required" data-drupal-selector="edit-keys"
+                           class="input-group-lg form-search form-control"
+                           type="search" id="edit-keys" name="outputform" style="width:50%;"
+                           data-toggle="tooltip">
+        </div>
+        <br>
+        <div class="form-inline">
+            <span style="display:inline-block;width:100px;">使用的技术： </span><input value='{{ i.notes }}' required="required" data-drupal-selector="edit-keys"
+                          class="input-group-lg form-search form-control"
+                          type="search" id="edit-keys" name="notes" style="width:50%;"
+                          data-toggle="tooltip">
+        </div>
+        <br>
+        <div class="form-inline">
+            <span style="display:inline-block;width:100px;"> 使用的数据库： </span><input value='{{ i.database }}' data-drupal-selector="edit-keys"
+                           class="input-group-lg form-search form-control"
+                           type="search" id="edit-keys" name="database" style="width:50%;"
+                           data-toggle="tooltip">
+        </div>
+        <br>
+    {% endfor %}
+    <button class="btn btn-primary btn-group-lg">修改</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+</div>
+
+</body>
+</html>

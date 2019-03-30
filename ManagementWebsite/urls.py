@@ -20,6 +20,7 @@ from ManagementWebsite import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('each/', views.each, name='each'),
     path('upload/', include('upload.urls')),
     path('papers/', include('papers.urls')),
     path('admin/', admin.site.urls),

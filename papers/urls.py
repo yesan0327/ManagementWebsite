@@ -42,5 +42,7 @@ urlpatterns = [
     path('all/', views.all, name='all'),
     path('get_keywords/', views.get_keywords, name='get_keywords'),
     path('result/', views.result, name='result'),
+    path('editsuccess/', views.editsuccess, name='editsuccess')
+
 
 ]
