@@ -19,3 +19,7 @@ def home(request):
 def each(request):
     paper = Paper.objects.filter(_id='5c9eda5cf2fc6b2b728d92a5')
     return render(request, 'paper/each.html',  {'paper': paper})
+
+def deletesuccess(request):
+    paper = Paper.objects.filter(_id='5c9eda5cf2fc6b2b728d92a5').delete()
+    return render(request, 'paper/deletesuccess.html', None)
