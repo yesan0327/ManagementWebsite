@@ -13,45 +13,7 @@
 {% load static %}
 {% include 'nav.html' %}
 {% include 'searchbar.html' %}
-    <table class="table table-hover">
-    <caption align="center">按不同会议搜索的结果为以下文章</caption>
-        <thead>　　　　　　　　　　　　　　　　
-        <tr>　　　　
-            <th><h5>论文标题</h5></th>
-            <th><h5>会议</h5></th>
-            <th><h5>时间</h5></th>
-            <th><h5>主要内容</h5></th>
-            <th><h5>输入</h5></th>
-            <th><h5>输出</h5></th>
-            <th><h5>技术</h5></th>
-            <th><h5>数据集</h5></th>
-        </tr>
-        </thead>
-        <tbody>　　　　　　　　　　　　　　　　　　　　　　　　　
-        {% for i in paper %}
-            <tr>
-                <td width="10%"><font size="2">{{ i.title }}</font></td>
-                <td bgcolor="#FDFFD9" width="5%"><font size="2">{{ i.conference }}</font></td>
-                <td  width="1%"><font size="2">{{ i.time }}</font></td>
-                <td width="20%"><font size="2">{{ i.content }}</font></td>
-                <td width="15%"><font size="2">{{ i.inputform }}</font></td>
-                <td width="15%"><font size="2">{{ i.outputform }}</font></td>
-                <td width="15%"><font size="2">{{ i.notes }}</font></td>
-                <td width="8%"><font size="2">{{ i.database }}</font></td>
- <td>
-                <a style="color: white" href="/static/download/{{ i.num }}.pdf/">
-                    <button type="button" class="btn btn-primary btn-xm" data-toggle="modal"
-                            data-target="#collectioName">
-                        <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-                    </button>
-                </a>
-            </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-
+{% include 'content.html' %}
 {% include 'bottom.html' %}
 {% include 'total.html' %}
 

@@ -6,15 +6,31 @@
     <title>Title</title>
 </head>
 <body>
-<div class="main-content-pagitor" align="center">
-    {% if paper.has_previous %}
-        <a href="?page={{ paper.previous_page_number }}"> 上一页</a>
-    {% endif %}
-    <span>{{ paper.number }} / {{ paper.paginator.num_pages }}</span>
-    {% if paper.has_next %}
-        <a href="?page={{ paper.next_page_number }}">下一页</a>
-    {% endif %}
-</div>
+{#<div class="main-content-pagitor" align="center">#}
+{#    {% if paper.has_previous %}#}
+{#        <a href="?page={{ paper.previous_page_number }}"> 上一页</a>#}
+{#    {% endif %}#}
+{#    <span>{{ paper.number }} / {{ paper.paginator.num_pages }}</span>#}
+{#    {% if paper.has_next %}#}
+{#        <a href="?page={{ paper.next_page_number }}">下一页</a>#}
+{#    {% endif %}#}
+{#</div>#}
+   <div id="pager" class="text-center pagination-sm">
+            <ul class="pagination bootpag">
+                {% if paper.has_previous %}
+                    <li data-lp="1" class="first"><a href="?page=1"><span
+                            aria-hidden="true">←</span></a></li>
+                    <li data-lp="1" class="prev"><a href="?page={{ paper.previous_page_number }}">«</a></li>
+                {% endif %}
+                <li data-lp="1" class="active"><a href="?page={{ paper.number }}">{{ paper.number }}</a></li>
+                {% if paper.has_next %}
+                    <li data-lp="6" class="next"><a href="?page={{ paper.next_page_number }}">»</a></li>
+                {% endif %}
+                <li data-lp="45" class="last"><a href="?page={{ paper.paginator.num_pages }}"><span
+                        aria-hidden="true">→</span></a></li>
+
+            </ul>
+        </div>
 <hr>
 
 </body>
