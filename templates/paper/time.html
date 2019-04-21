@@ -41,7 +41,14 @@
                 <td width="15%"><font size="2">{{ i.outputform }}</font></td>
                 <td width="15%"><font size="2">{{ i.notes }}</font></td>
                 <td width="8%"><font size="2">{{ i.database }}</font></td>
-
+ <td>
+                <a style="color: white" href="/static/download/{{ i.num }}.pdf/">
+                    <button type="button" class="btn btn-primary btn-xm" data-toggle="modal"
+                            data-target="#collectioName">
+                        <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                    </button>
+                </a>
+            </td>
             </tr>
         {% endfor %}
         </tbody>

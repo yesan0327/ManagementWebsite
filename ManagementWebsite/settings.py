@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'upload',
     'papers',
-    'system',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +90,7 @@ mongoengine.connect('papers', host='127.0.0.1', port=27017)
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
-AUTH_USER_MODEL = 'system.UserProfile'
+# AUTH_USER_MODEL = 'system.UserProfile'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
