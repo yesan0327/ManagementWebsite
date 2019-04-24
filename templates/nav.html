@@ -1,17 +1,24 @@
-<nav class="navbar navbar-default" role="navigation">
+<div id="cu-identity" style="">
+    <div id="cu-logo">
+        <a href="http://www.zstu.edu.cn/"><img src="/static/images/logo.jpg"
+                                               alt="Cornell University" width="" border="0"></a>
+    </div>
+</div>
+<nav class="navbar navbar-default" role="navigation" >
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">智能化软件开发</a>
+            <a class="navbar-brand" href="/">首页</a>
         </div>
         <div>
             <ul class="nav navbar-nav">
-                <li><a href="/papers/all">所有文章</a></li>
-                <li><a href="/upload/">上传文章</a></li>
-
+                <li style="font-size: larger"><a href="/papers/all">所有文章</a></li>
+                <li style="font-size: larger"><a href="/charts/">数据分析</a></li>
+                <li style="font-size: larger"><a href="/upload/">上传文章</a></li>
             </ul>
 
-{#            <ul class="nav navbar-nav navbar-right">#}
-{#                <li style="float: right"><a href="/admin/">登录</a></li>#}
+                        <ul class="nav navbar-nav navbar-right">
+{#                            <li style="float: right"><a href="/admin/">登录</a></li>#}
+                            {% include 'searchbar.html' %}
         </div>
     </div>
 </nav>

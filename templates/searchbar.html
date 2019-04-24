@@ -1,4 +1,3 @@
-<div class="container">
 
     {##}
     {#        <a href="/papers/APSEC">APSEC</a>&nbsp;#}
@@ -20,24 +19,7 @@
     {#        <a href="/papers/TSE">TSE</a> &nbsp;#}
     {#        <a href="/papers/WCRE">WCRE</a> &nbsp;#}
 
-按年份查找论文：
-    <a href="/papers/2005">2005</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2006">2006</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2007">2007</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2008">2008</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2009">2009</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2010">2010</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2011">2011</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2012">2012</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2013">2013</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2014">2014</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2015">2015</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2016">2016</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2017">2017</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2018">2018</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/papers/2019">2019</a>&nbsp;&nbsp;&nbsp;&nbsp;
 
-</div>
 <br>
 <form action="/papers/result/" method="post" name='keywords'/>
 {% csrf_token %}
@@ -45,11 +27,11 @@
 
     <input required="required" data-drupal-selector="edit-keys" class="input-group-lg form-search form-control"
            placeholder="Enter keywords"
-           type="search" id="edit-keys" name="name" style="width:80%;"
+           type="search" id="edit-keys" name="name" style="width:50%;"
            data-toggle="tooltip">
 
     <select data-drupal-selector="edit-sort-order" class="input-group form-select form-control" id="edit-sort-order"
-            name="type" style="width:10%;">
+            name="type" style="width:25%;">
         <option value="title" selected="selected">标题</option>
         <option value="countries">国家</option>
         <option value="authors">作者</option>
@@ -64,7 +46,7 @@
 
     {#        <h5> 输入标题关键词：<input type="text" name="name"/>#}
     {#        <input class="btn btn-primary" type="submit" value="搜索"/></h5>#}
-    <button style="width:9%;" type="submit" name="op" value="Search"
+    <button style="width:20%;" type="submit" name="op" value="Search"
             class="set button js-form-submit form-submit btn-primary btn icon-only"><span
             class="sr-only">Search</span><span class="icon glyphicon glyphicon-search"
                                                aria-hidden="true"></span></button>
