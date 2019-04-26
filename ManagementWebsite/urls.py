@@ -24,6 +24,7 @@ urlpatterns = [
     path('deletesuccess/', views.deletesuccess, name='deletesuccess'),
     path('upload/', include('upload.urls')),
     path('charts/', include('charts.urls')),
+    path('user/', include('login.urls')),
     path('papers/', include('papers.urls')),
     path('admin/', admin.site.urls)
 

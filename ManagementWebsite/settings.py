@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'upload',
     'papers',
     'charts',
+    'login',
 
 ]
 
