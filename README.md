@@ -1,3 +1,2 @@
 # ManagementWebsite
-智能化软件开发相关文献的在线查询系统
 基于Django框架
